@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+  gap: 1;
+  justify-content: center;
+  padding: 4em;
+  background-color: rgba(90, 79, 79, 0.089);
+  width: 700px;
+  height: 500px;
+}
+
+.button {
+  display: flex;
+  gap: 2em;
+}
