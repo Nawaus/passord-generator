@@ -1,5 +1,5 @@
 import styles from "../Generator/Generator.module.css";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 const arrayWithLettersNumbersAndCharacters = [
   "A",
@@ -85,34 +85,24 @@ const generatePassword = (min, max) => {
   return password;
 };
 
-// const handleCopyClick = () => {
-//   const textRefText = useRef(null);
-//
-//   const textToCopy = textRefText.current.innerText;
-//
-//   navigator.clipboard
-//     .writeText(textToCopy)
-//     .then(() => {
-//       console.log("Text successfully, copied to clipboard");
-//     })
-//     .catch(() => {
-//       console.log("Failed to copy the text");
-//     });
-// };
-
 export default function Generator() {
   const [password, setPassword] = useState("");
+  const [buttonText, setButtonText] = useState("Copy");
 
   return (
     <div className={styles.container}>
       <h2 style={{ fontSize: "4em" }}>Password Generator</h2>
-
       <div className={styles.button}>
         <button onClick={() => setPassword(generatePassword(0, 71))}>
           Generate
         </button>
-
-        <button onClick={() => {}}>Copy!</button>
+        <button
+          onClick={() => {
+            setButtonText("Copied!");
+            navigator.clipboard.writeText(password.join(""));
+          }}>
+          {buttonText}
+        </button>
       </div>
       <p>{password}</p>
     </div>
