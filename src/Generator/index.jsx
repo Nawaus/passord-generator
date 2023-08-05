@@ -79,13 +79,13 @@ const arrayWithLettersNumbersAndCharacters = [
   "|",
 ];
 
-const generatePassword = (min, max) => {
-  const value = Math.floor(Math.random() * (max - min + 1)) + min;
-  const password = arrayWithLettersNumbersAndCharacters.slice(value);
-  return password;
-};
-
 export default function Generator() {
+  const generatePassword = (min, max) => {
+    const value = Math.floor(Math.random() * (max - min + 1)) + min;
+    const password = arrayWithLettersNumbersAndCharacters.slice(value);
+    setButtonText("Copy");
+    return password;
+  };
   const [password, setPassword] = useState("");
   const [buttonText, setButtonText] = useState("Copy");
 
