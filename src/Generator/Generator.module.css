@@ -12,6 +12,6 @@
 }
 
 .button {
-  display: flex;
   gap: 2em;
+  text-align: center;
 }
