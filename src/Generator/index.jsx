@@ -104,7 +104,7 @@ export default function Generator() {
           {buttonText}
         </button>
       </div>
-      <p>{password}</p>
+      <div>{password}</div>
     </div>
   );
 }
